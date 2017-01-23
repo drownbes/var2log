@@ -1,0 +1,16 @@
+{
+  "name": "var2log",
+  "version": "1.0.0",
+  "description": "",
+  "main": "plugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ast-types": "^0.9.4",
+    "recast": "^0.11.20"
+  }
+}
