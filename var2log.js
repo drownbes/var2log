@@ -1,3 +1,5 @@
+#!/usr/bin/node
+
 const recast = require('recast');
 const types = require('ast-types');
 const b = types.builders;
@@ -48,12 +50,12 @@ const vars2console = (vars) => {
     return stmt;
 };
 
-async function run() {
-    const line = await readPipe();
-    const ast = await recast.parse(line);
-    let vars = collectVars(ast);
-    let code = recast.prettyPrint(vars2console(vars), { quote: 'single', tabWidth: 2 }).code;
-    console.log(code);
+function run() {
+    readPipe()
+    .then(recast.parse)
+    .then(collectVars)
+    .then(vars => recast.prettyPrint(vars2console(vars), { quote: 'single', tabWidth: 2 }).code)
+    .then((code) => console.log(code))
+    .catch((e) => console.log(e.description + ':' + e.index));
 }
-
 run();

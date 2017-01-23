@@ -2,9 +2,12 @@
   "name": "var2log",
   "version": "1.0.0",
   "description": "",
-  "main": "plugin.js",
+  "main": "var2log.js",
+  "bin": {
+    "var2log": "./var2log.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "var2log": "node ./var2log.js"
   },
   "keywords": [],
   "author": "",
